@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Antigüedad</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculadora de Antigüedad</h1>
+    <form id="formulario">
+        <label for="clave">Terminación Clave:</label>
+        <input type="text" id="clave" maxlength="6" required>
+        
+        <label for="fechaIngreso">Fecha de Ingreso (dd/mm/aaaa):</label>
+        <input type="date" id="fechaIngreso" required>
+        
+        <label for="fechaEgreso">Fecha de Egreso (dd/mm/aaaa):</label>
+        <input type="date" id="fechaEgreso" required>
+        
+        <label for="tipo">Tipo:</label>
+        <select id="tipo">
+            <option value="1">Activo</option>
+            <option value="2">Licencia</option>
+        </select>
+
+        <button type="button" onclick="agregarRegistro()">Agregar</button>
+        <button type="button" onclick="eliminarTodo()">Eliminar Todo</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Terminación Clave</th>
+                <th>Fecha de Ingreso</th>
+                <th>Fecha de Egreso</th>
+                <th>Tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="tablaRegistros">
+            <!-- Filas de registros serán añadidas aquí dinámicamente -->
+        </tbody>
+    </table>
+
+    <button type="button" onclick="calcular()">Calcular</button>
+
+    <div id="resultados">
+        <h2>Sumatoria Final</h2>
+        <p id="tiempoActivo">Tiempo Activo en años, meses y días: </p>
+        <p id="tiempoLicencia">Tiempo en Licencia en años, meses y días: </p>
+    </div>
+    <footer>
+        <p>SSRN BPE/GACG</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
